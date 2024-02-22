@@ -9,11 +9,22 @@ import java.net.URL;
 public class ReadUpStream {
     public static void main(String[] args) {
         URL webpage = null;
+        BufferedWriter writer=null;
         try {
             webpage = new URL("https://en.wikipedia.org/wiki/Computer_science");
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(webpage.openStream()));
-            BufferedWriter writer = new BufferedWriter(new FileWriter("output.html"));
+            // BufferedWriter writer = new BufferedWriter(new FileWriter("output.html"));
+            String filename = webpage.getFile();
+            filename = filename.substring(filename.lastIndexOf('/') + 1);
+            
+            // Append .html extension
+            if (!filename.endsWith(".html")) {
+                filename += ".html";
+            }
+            
+            writer = new BufferedWriter(new FileWriter(filename));
+            
 
             // Now read the webpage file
             String lineOfWebPage;
