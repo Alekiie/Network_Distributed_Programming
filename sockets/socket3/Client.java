@@ -45,6 +45,6 @@ public class Client {
     public static void main(String[] args) {
         Client c = new Client();
         delay();
-        c.askQuestion("who created you?");
+        c.askQuestion("what is the time?");
     }
 }
