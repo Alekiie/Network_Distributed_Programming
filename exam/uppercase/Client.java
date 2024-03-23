@@ -16,7 +16,7 @@ public class Client {
             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
 
-            String quiz = "can you change this to uppercase?";
+            String quiz = "What is your name?";
             if (quiz != null) {
                 output.println(quiz);
 
