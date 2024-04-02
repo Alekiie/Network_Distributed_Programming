@@ -11,8 +11,11 @@ class RunnableDemo implements Runnable {
 
     //    //run method
     public void run() {
-        while (true) {
+        for(int i=0;i<2;i++){
+
             System.out.println(message);
+        }
+        while (true) {
         }
     }
 }
